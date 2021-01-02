@@ -734,7 +734,7 @@ UINT8 injectDSDTintoAmiboardInfo(QByteArray ami, QByteArray dsdtbuf, QByteArray 
     /* Copy data till DSDT */
     out.append((const char*) amiboardbuf, offset);
     // Copy new DSDT
-    out.append(dsdtbuf, newDSDTsize);
+    out.append((const char*) dsdtbuf, newDSDTsize);
     // Pad the file
     out.append(QByteArray((alignDiffDSDT - diffDSDT), '\x00'));
     // Copy the rest
